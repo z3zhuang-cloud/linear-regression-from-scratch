@@ -1,0 +1,1 @@
+Linear regression implemented from scratch with NumPy, including gradient descent, MSE optimization, visualization, and sklearn comparison.
