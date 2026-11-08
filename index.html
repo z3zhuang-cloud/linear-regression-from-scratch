@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zimo Zhuang | Economics & Data Science</title>
+  <meta name="description" content="Zimo Zhuang — UC San Diego Economics student interested in data science, quantitative research, mathematical modeling, and machine learning." />
+  <style>
+    :root {
+      --bg: #fbfaf9;
+      --card: #ffffff;
+      --text: #221f20;
+      --muted: #6e6769;
+      --line: #e9e2e4;
+      --accent: #b88993;
+      --soft: #f4e9ec;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(251,250,249,.9);
+      border-bottom: 1px solid rgba(233,226,228,.8);
+    }
+    .nav-inner {
+      min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { font-family: Georgia, serif; font-weight: 700; letter-spacing: .08em; }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      display: grid; grid-template-columns: 1.25fr .75fr; gap: 60px;
+      align-items: center; padding: 88px 0 72px;
+    }
+    .eyebrow {
+      color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    }
+    h1 {
+      margin: 12px 0 14px; font-family: Georgia, serif;
+      font-size: clamp(44px, 7vw, 78px); line-height: .98; letter-spacing: -.03em;
+    }
+    .hero h2 {
+      margin: 0 0 18px; font-size: clamp(20px, 3vw, 28px); font-weight: 500; color: var(--muted);
+    }
+    .hero p { max-width: 680px; font-size: 17px; color: #4c4648; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 11px 17px; border-radius: 999px; border: 1px solid var(--line);
+      background: var(--card); font-weight: 600; font-size: 14px;
+    }
+    .btn.primary { background: var(--text); color: white; border-color: var(--text); }
+    .portrait {
+      width: min(360px, 100%); justify-self: end; background: var(--soft);
+      padding: 14px; border-radius: 28px;
+      box-shadow: 0 18px 60px rgba(45,35,38,.08);
+    }
+    .portrait img { width: 100%; display: block; border-radius: 20px; }
+
+    section { padding: 64px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 230px 1fr; gap: 40px; }
+    .section-head h3 {
+      margin: 0; font-family: Georgia, serif; font-size: 26px; letter-spacing: .02em;
+    }
+    .section-content { max-width: 760px; }
+    .section-content > p:first-child { margin-top: 0; }
+
+    .cards { display: grid; gap: 18px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px;
+    }
+    .card-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+    .card h4 { margin: 0; font-size: 18px; }
+    .meta { color: var(--muted); font-size: 14px; white-space: nowrap; }
+    .role { color: var(--accent); font-weight: 650; margin: 4px 0 10px; font-size: 14px; }
+    .card ul { margin: 10px 0 0 18px; padding: 0; color: #4f484a; }
+    .card li + li { margin-top: 6px; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      border: 1px solid var(--line); background: var(--card);
+      border-radius: 999px; padding: 8px 12px; font-size: 14px;
+    }
+
+    .contact-box {
+      background: var(--text); color: white; border-radius: 24px; padding: 34px;
+      display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    }
+    .contact-box h3 { margin: 0 0 6px; font-family: Georgia, serif; font-size: 28px; }
+    .contact-box p { margin: 0; color: #d9d3d5; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .contact-links a {
+      border: 1px solid #575052; border-radius: 999px; padding: 10px 14px; font-size: 14px;
+    }
+
+    footer { padding: 28px 0 44px; color: var(--muted); font-size: 13px; text-align: center; }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 34px; padding-top: 52px; }
+      .portrait { justify-self: start; width: 260px; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .card-top, .contact-box { align-items: flex-start; flex-direction: column; }
+      .meta { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <div class="brand">ZIMO ZHUANG</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">UC San Diego · Economics</div>
+        <h1>Zimo Zhuang</h1>
+        <h2>Economics student exploring data science, quantitative research, and mathematical modeling.</h2>
+        <p>
+          I am interested in using quantitative methods to understand real-world problems, with a growing focus on
+          machine learning and the mathematics behind how technical models work.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="Zimo_Zhuang_Resume.pdf" target="_blank">View Resume</a>
+          <a class="btn" href="https://github.com/z3zhuang-cloud" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/zimo-zhuang-a31443389/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="mailto:z3zhuang@ucsd.edu">Email</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="profile.jpg" alt="Portrait of Zimo Zhuang" />
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="section-head">
+        <h3>About</h3>
+        <div class="section-content">
+          <p>
+            I am an Economics student at UC San Diego, Class of 2029, with a 3.93 GPA and an intended minor in Data Science.
+            My coursework and research have strengthened my interest in statistics, modeling, and the mathematical foundations
+            of machine learning.
+          </p>
+          <p>
+            Outside of academics, I enjoy golf, fitness, travel, and music.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <h3>Research</h3>
+        <div class="section-content cards">
+          <article class="card">
+            <div class="card-top">
+              <h4>Same Salesperson, Different Signal</h4>
+              <div class="meta">Student Researcher</div>
+            </div>
+            <div class="role">Behavioral economics · Randomized experiment · N = 498</div>
+            <p><em>Extraversion, Appraisal, and Store Entry</em></p>
+            <ul>
+              <li>Conducted a randomized online experiment under mentorship with 498 participants, comparing storefront images with and without an entrance salesperson.</li>
+              <li>Found that the entrance-salesperson condition reduced stated entry propensity by about 12 points on a 0–100 scale. Evidence was insufficient to support the original hypothesis that this effect varied with extraversion.</li>
+              <li>Combined regression analysis with coding of open-ended responses. Exploratory analyses linked higher extraversion to more positive and fewer negative interpretations of the salesperson; these associations do not establish a causal mechanism.</li>
+              <li>Presented the study at the Missouri Valley Economic Association (MVEA) 2026 Annual Meeting on November 6, 2026.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h4>Green Advertising & Consumer Regret</h4>
+              <div class="meta">Research Assistant</div>
+            </div>
+            <div class="role">Qualtrics · consumer behavior</div>
+            <ul>
+              <li>Reviewed literature and built Qualtrics experiments using branching logic and attention checks.</li>
+              <li>Supported data analysis and academic writing on advertising and consumer behavior.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <h3>Experience</h3>
+        <div class="section-content cards">
+          <article class="card">
+            <div class="card-top">
+              <h4>Guotai Haitong Securities</h4>
+              <div class="meta">Jul–Aug 2026</div>
+            </div>
+            <div class="role">Intern</div>
+            <ul>
+              <li>Developed foundational knowledge of securities markets under mentor guidance.</li>
+              <li>Gained exposure to financial analysis methods and the workflow of financial analysts.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h4>M-zing</h4>
+              <div class="meta">Jul–Aug 2025</div>
+            </div>
+            <div class="role">Business Analysis Intern</div>
+            <ul>
+              <li>Researched approximately 200 prospective clients and supported sales efforts associated with RMB 180,000 in team sales.</li>
+              <li>Assessed client needs for embedded software development tools while learning about AI/ML applications and basic principles.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <h3>Coursework & Skills</h3>
+        <div class="section-content">
+          <p><strong>Relevant coursework:</strong> MATH 10A–10C, MATH 20B, DSC 10. Currently taking MATH 18, DSC 20, and ECON 120A.</p>
+          <div class="skills">
+            <span class="pill">Python</span>
+            <span class="pill">pandas</span>
+            <span class="pill">NumPy</span>
+            <span class="pill">Excel</span>
+            <span class="pill">Qualtrics</span>
+            <span class="pill">Probability</span>
+            <span class="pill">Statistics</span>
+            <span class="pill">Regression</span>
+            <span class="pill">Linear Algebra</span>
+            <span class="pill">Differential Equations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contact-box">
+        <div>
+          <h3>Let’s connect.</h3>
+          <p>Open to research, data science, and quantitative project opportunities.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:z3zhuang@ucsd.edu">z3zhuang@ucsd.edu</a>
+          <a href="https://github.com/z3zhuang-cloud" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/zimo-zhuang-a31443389/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Zimo Zhuang</footer>
+</body>
+</html>
+
